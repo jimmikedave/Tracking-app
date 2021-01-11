@@ -1,10 +1,14 @@
 // import express library
 const express = require('express');
 const mongoose= require('mongoose');
+const bodyParser = require('body-parser'); //helper library that auto parses info of incoming req
 const authRoutes = require('./routes/authRoutes')
 
 const app = express();
 
+//needs to be above authRoutes to proccess parse first
+//then sends the parsed info to the req param
+app.use(bodyParser.json()); 
 app.use(authRoutes);
 
 const mongoUri = 
