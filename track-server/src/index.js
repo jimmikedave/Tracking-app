@@ -1,3 +1,4 @@
+require('./models/user');
 // import express library
 const express = require('express');
 const mongoose= require('mongoose');
